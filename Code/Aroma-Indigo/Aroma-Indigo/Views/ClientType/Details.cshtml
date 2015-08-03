@@ -1,0 +1,29 @@
+﻿@model Aroma_Indigo.Models.ClientType
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>ClientType</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.ClientTypeName)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.ClientTypeName)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Active)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Active)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.ClientTypeId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

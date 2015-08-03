@@ -1,0 +1,60 @@
+﻿@model Aroma_Indigo.Models.Client
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Create</h2>
+
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>Client</legend>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.ClientName)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.ClientName)
+            @Html.ValidationMessageFor(model => model.ClientName)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.ClientSurname)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.ClientSurname)
+            @Html.ValidationMessageFor(model => model.ClientSurname)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.IDNumber)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.IDNumber)
+            @Html.ValidationMessageFor(model => model.IDNumber)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.ClientTypeID, "ClientType")
+        </div>
+        <div class="editor-field">
+            @Html.DropDownList("ClientTypeID", String.Empty)
+            @Html.ValidationMessageFor(model => model.ClientTypeID)
+        </div>
+
+        <p>
+            <input type="submit" value="Create" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
